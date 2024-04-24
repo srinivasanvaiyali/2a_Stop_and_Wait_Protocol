@@ -1,3 +1,5 @@
+# Develop By:SRINIVASAN.S
+# Reg No:212222043008
 # 2a_Stop_and_Wait_Protocol
 ## AIM 
 To write a python program to perform stop and wait protocol
@@ -10,28 +12,28 @@ To write a python program to perform stop and wait protocol
 6. Stop the Program
 ## PROGRAM
 ## client program
-import socket
-s=socket.socket()
-s.bind(('localhost',8000))
-s.listen(5)
-c,addr=s.accept()
-while True:
-i=input("Enter a data: ")
-c.send(i.encode())
-ack=c.recv(1024).decode()
-if ack:
-print(ack)
-continue
-else:
-c.close()
-break
+import socket   
+s=socket.socket()   
+s.bind(('localhost',8000))   
+s.listen(5)   
+c,addr=s.accept()   
+while True:   
+i=input("Enter a data: ")   
+c.send(i.encode()) 
+ack=c.recv(1024).decode()   
+if ack:  
+print(ack)  
+continue   
+else:   
+c.close()  
+break   
 ## server program 
-import socket
-s=socket.socket()
-s.connect(('localhost',8000))
-while True:
-print(s.recv(1024).decode())
-s.send("Acknowledgement Received".encode())
+import socket   
+s=socket.socket()  
+s.connect(('localhost',8000))  
+while True:   
+print(s.recv(1024).decode())  
+s.send("Acknowledgement Received".encode())   
 ## OUTPUT
 ![image](https://github.com/srinivasanvaiyali/2a_Stop_and_Wait_Protocol/assets/145117665/cfe3bf2b-b4f4-44d6-919e-5e6f96d0f5fc)
 
